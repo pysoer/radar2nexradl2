@@ -10,7 +10,7 @@ import warnings
 import re
 
 
-class cinrad(object):
+class cinradReader(object):
     """
     Class for accessing all info and data in a CINRAD (WSR-98D) binary file.
 

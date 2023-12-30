@@ -5,14 +5,14 @@
 # Path: D:\Seafile\Share\notebooks\20230601ReadFile\CINRAD2NEXRAD.py
 import struct
 import pyart.io.nexrad_level2 as ar2v
-from cinrad import cinrad, data_type
+from cinradReader import cinradReader, data_type
 from pyart.io.nexrad_level2 import _structure_size
 import warnings
 
 
 def cinrad2nexrad(inpath, outpath, site_name_4s=None):
     # 1. Read CINRAD radar product
-    radar = cinrad(inpath)
+    radar = cinradReader(inpath)
     # 2. Write NEXRAD level II product
     ## 2.1 Write volume header
     volume_header = []  # ar2v.volume_header
