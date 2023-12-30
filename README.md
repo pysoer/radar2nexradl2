@@ -1,0 +1,2 @@
+# radar2nexradl2
+将中国气象雷达标准格式转成美国nexradL2格式，可供GR2Analyst读取。
