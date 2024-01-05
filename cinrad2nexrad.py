@@ -20,7 +20,6 @@ def cinrad2nexrad(inpath, outpath, site_name_4s=None):
     volume_header["tape"] = "AR2V0006."
     volume_header["extension"] = "001"
     tt = radar.info["task"]["scan_start_time"]
-    print(tt)
     volume_header["date"] = int(tt / 24 / 3600)
     volume_header["time"] = int((tt / 24 / 3600 - int(tt / 24 / 3600)) * 24 * 3600 * 1000)
     if site_name_4s is None:
@@ -224,17 +223,17 @@ def cinrad2nexrad(inpath, outpath, site_name_4s=None):
         header["seg_num"] = 0  # ?
         rec[i]["header"] = header
 
-    print(
-        volume_header["icao"],
-        volume_header["icao"],
-        radar.info["site"]["Latitude"],
-        radar.info["site"]["Longitude"],
-        radar.info["site"]["antenna_height"],
-        13,
-        "CN",
-        site_name_4s,
-        "\n",
-    )
+    # print(
+    #     volume_header["icao"],
+    #     volume_header["icao"],
+    #     radar.info["site"]["Latitude"],
+    #     radar.info["site"]["Longitude"],
+    #     radar.info["site"]["antenna_height"],
+    #     13,
+    #     "CN",
+    #     site_name_4s,
+    #     "\n",
+    # )
 
     # 3.Write into NEXRAD ar2v binary file
 
